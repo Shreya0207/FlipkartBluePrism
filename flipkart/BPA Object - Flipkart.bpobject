@@ -756,7 +756,7 @@
     </apptypeinfo>
   </appdef>
   <view>
-    <camerax>256</camerax>
+    <camerax>283</camerax>
     <cameray>-87</cameray>
     <zoom version="2">1.25</zoom>
   </view>
@@ -770,7 +770,7 @@
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="c1e62976-5c17-47a5-8489-0e0f24122a55" type="Normal" published="False">
+  <subsheet subsheetid="c1e62976-5c17-47a5-8489-0e0f24122a55" type="Normal" published="True">
     <name>Insert data into database</name>
     <view>
       <camerax>201</camerax>
@@ -781,12 +781,12 @@
   <subsheet subsheetid="42236ad3-898c-41ba-b776-81bbc7cc475e" type="Normal" published="False">
     <name>Checking data in database</name>
     <view>
-      <camerax>0</camerax>
+      <camerax>318</camerax>
       <cameray>-35</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="9b4ab496-626c-442a-ab0a-d7c58440da30" type="Normal" published="False">
+  <subsheet subsheetid="9b4ab496-626c-442a-ab0a-d7c58440da30" type="Normal" published="True">
     <name>Launch Application</name>
     <view>
       <camerax>0</camerax>
@@ -794,7 +794,7 @@
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="d9a95656-9eee-4e92-9be2-04087783f1bc" type="Normal" published="False">
+  <subsheet subsheetid="d9a95656-9eee-4e92-9be2-04087783f1bc" type="Normal" published="True">
     <name>SearchProduct</name>
     <view>
       <camerax>0</camerax>
@@ -810,15 +810,15 @@
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="f9eaec67-63eb-46b8-a1dc-24f36eb323e3" type="Normal" published="False">
+  <subsheet subsheetid="f9eaec67-63eb-46b8-a1dc-24f36eb323e3" type="Normal" published="True">
     <name>Insert Data in Excel</name>
     <view>
-      <camerax>199</camerax>
+      <camerax>268</camerax>
       <cameray>15</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="2d0d0742-296d-4fba-90a4-0a59681b2789" type="Normal" published="False">
+  <subsheet subsheetid="2d0d0742-296d-4fba-90a4-0a59681b2789" type="Normal" published="True">
     <name>Data Verification</name>
     <view>
       <camerax>0</camerax>
@@ -828,6 +828,14 @@
   </subsheet>
   <subsheet subsheetid="01c44bd6-64b3-46c7-8e0a-923716c156af" type="Normal" published="False">
     <name>Verification of changes in data</name>
+    <view>
+      <camerax>-235</camerax>
+      <cameray>-493</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="af2e101c-7339-478a-9f27-b286ca70eb17" type="Normal" published="True">
+    <name>Get Color</name>
     <view>
       <camerax>0</camerax>
       <cameray>0</cameray>
@@ -1830,8 +1838,7 @@ You will not be able to call this action from a business process, nor will it be
     <display x="-90" y="-150" w="30" h="30" />
     <groupid>be7e03e8-0a2e-4f21-9dc2-1d6c06826f20</groupid>
     <choices />
-    <timeout>
-    </timeout>
+    <timeout>5</timeout>
   </stage>
   <stage stageid="14803f8b-a478-4ead-ae12-3a9035fdef17" name="Data - SQL Server::Get Collection" type="Action">
     <subsheetid>42236ad3-898c-41ba-b776-81bbc7cc475e</subsheetid>
@@ -1904,5 +1911,255 @@ You will not be able to call this action from a business process, nor will it be
     <display x="150" y="150" />
     <onsuccess>c1d53c38-828d-4e82-9ced-723ddc3496d1</onsuccess>
     <groupid>62b93bdd-40b6-4795-b111-7177bae0333c</groupid>
+  </stage>
+  <stage stageid="270243e1-584c-44e1-a0d8-d45f94b75ac8" name="Get Color" type="SubSheetInfo">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c02ab30e-8297-4a53-8862-0de76fb5a44e" name="Start" type="Start">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="-60" y="-180" />
+    <onsuccess>11b6a605-bbd8-478d-aa5d-1174d200ca72</onsuccess>
+  </stage>
+  <stage stageid="ae269436-0640-465a-b42b-17caf67fb68a" name="End" type="End">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="-210" y="135" />
+  </stage>
+  <stage stageid="11b6a605-bbd8-478d-aa5d-1174d200ca72" name="MS Excel VBO::Create Instance" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="-120" />
+    <inputs>
+      <input type="flag" name="Enable Events" friendlyname="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="handle" />
+    </outputs>
+    <onsuccess>11012984-6df1-4c38-9e32-d87a4b2b25ca</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="47d7281b-b498-480e-af24-873a772fdcda" name="handle" type="Data">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="-180" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="11012984-6df1-4c38-9e32-d87a4b2b25ca" name="MS Excel VBO::Open Workbook" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="-75" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Shreya\Desktop\FlipkartData.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
+    </outputs>
+    <onsuccess>b23c900e-e2a6-4cdd-ae9d-418c65a1eb05</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="987a3b4e-f7f5-47f5-a16b-8e303e52075e" name="Workbook Name" type="Data">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="-135" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b23c900e-e2a6-4cdd-ae9d-418c65a1eb05" name="MS Excel VBO::Get Worksheet As Collection" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="-15" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[Workbook Name]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="InputCollection" />
+    </outputs>
+    <onsuccess>06bb8206-090c-4366-a1d8-27e6e9d2978b</onsuccess>
+    <resource object="MS Excel VBO" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="06bb8206-090c-4366-a1d8-27e6e9d2978b" name="Work Queues::Add To Queue" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>The Data collection contains the items to be added to the queue. The collection may contain single or multiple rows, with each representing an item to be added.
+
+If there is a failure during the process, the queue will be unchanged - i.e. no rows will be loaded even if the error occurred on the last one.
+
+If Defer Until is specified, the items will not be available to be worked until then. Otherwise, they are available immediately.
+
+If the queue has a key field defined, an item added has key data longer than the maximum permitted 255 characters, an error will occur</narrative>
+    <display x="-60" y="45" />
+    <inputs>
+      <input type="text" name="Queue Name" friendlyname="Queue Name" narrative="The name of the queue to add items to" expr="&quot;FlipkartQueue&quot;" />
+      <input type="collection" name="Data" friendlyname="Data" narrative="A collection containing the data, one row for each item to be added" expr="[InputCollection]" />
+      <input type="datetime" name="Defer Until" friendlyname="Defer Until" narrative="Optionally, the date/time the new item(s) should be deferred until" expr="" />
+      <input type="number" name="Priority" friendlyname="Priority" narrative="Optionally, the priority for the new item(s). Lower numbers represent higher priorities. The default is 0." expr="" />
+      <input type="text" name="Tags" friendlyname="Tags" narrative="Optionally, a semi-colon-separated set of tags to apply to the queue item(s)" expr="" />
+      <input type="text" name="Status" friendlyname="Status" narrative="Optionally, the initial status required of the work queue item(s) " expr="" />
+      <input type="number" name="Batch Size" friendlyname="Batch Size" narrative="Optionally, the batch size to use when adding many items to the queue.  A Value of 0 will process all items in one batch.  An empty field will use the default batch size of 1000." expr="">
+        <validator type="BluePrism.AutomateProcessCore.RangeParameterValidation" parameter="0:25000" />
+      </input>
+    </inputs>
+    <outputs>
+      <output type="collection" name="Item IDs" friendlyname="Item IDs" narrative="The IDs of the items which have been added to the queue, in the order of the collection of data passed that was input" stage="" />
+    </outputs>
+    <onsuccess>3eafe02c-e06c-46fd-996c-dcb1c5aa57e5</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Add To Queue" />
+  </stage>
+  <stage stageid="35a873e7-7760-4b83-a513-5fd596548216" name="InputCollection" type="Collection">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="-45" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3eafe02c-e06c-46fd-996c-dcb1c5aa57e5" name="Work Queues::Get Next Item" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <narrative>This action gets the next item to be worked from the queue, returning its details and locking it so no other case can work it.
+
+Items with higher priorities (lower numerical value) are processed first. Where the priority is the same, the next item is the one that has been in the queue the longest,  is not already locked, and is not already completed.
+
+The Item ID returned is used to make further calls to update the work status for that item. It may be empty, in which case there are no items available. This can mean either a) the queue is empty, or b) the queue is not running. This mechanism can be used to cleanly stop all processes working a particular queue at the end of the next case. Items that have a 'deferred' time set will not be returned unless that time has been reached.</narrative>
+    <display x="30" y="45" />
+    <inputs>
+      <input type="text" name="Queue Name" friendlyname="Queue Name" narrative="The name of the queue" expr="&quot;FlipkartQueue&quot;" />
+      <input type="text" name="Key Filter" friendlyname="Key Filter" narrative="Optionally, a key value to filter by. Only items with this key value will be considered." expr="" />
+      <input type="text" name="Tag Filter" friendlyname="Tag Filter" narrative="Optionally, a tag mask to filter by. This can consist of any number of tag searches - each term can be separated by a semi-colon and they are all applied to the search (ie. they are AND'ed terms not OR'ed terms). For example, &quot;Account: Joint; -Balance: Overdrawn; Card: *Visa*&quot; will include any items which match all the terms, ie. every item must have an 'Account: Joint' tag applied, no item can have a 'Balance: Overdrawn' tag applied, every item must have a tag applied which starts with 'Card: ' and then contains the text 'Visa'." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Item ID" friendlyname="Item ID" narrative="The ID of the item retrieved - empty if there are none available." stage="Item ID" />
+      <output type="collection" name="Data" friendlyname="Data" narrative="The data associated with the item - a single collection row." stage="SingleData" />
+      <output type="text" name="Status" friendlyname="Status" narrative="The status of the item." stage="" />
+      <output type="number" name="Attempts" friendlyname="Attempts" narrative="The number of attempts already made to work this item." stage="" />
+    </outputs>
+    <onsuccess>2109758b-6069-49b0-a830-0956c9afb52d</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Get Next Item" />
+  </stage>
+  <stage stageid="6b2be7c9-e2cf-40a9-9ad6-a38f9fd4f08d" name="Item ID" type="Data">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="035deec6-8230-47cb-8840-b5ac39eb886b" name="SingleData" type="Collection">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="0" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2109758b-6069-49b0-a830-0956c9afb52d" name="Item ID Exists" type="Decision">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="30" y="135" />
+    <decision expression="[Item ID] &lt;&gt; &quot;&quot;" />
+    <ontrue>f8c1eb8c-bd40-465d-8be2-0e50b3dc4883</ontrue>
+    <onfalse>11a01be2-631e-4236-a4ed-798e1505b6f8</onfalse>
+  </stage>
+  <stage stageid="15552364-dae4-4b03-aa4d-b2585920a66b" name="get Color" type="Calculation">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="210" y="135" />
+    <onsuccess>468b0112-7453-46d9-bb01-8a7fd03dbd97</onsuccess>
+    <calculation expression="Mid([SingleData.Name], 18, [Stop]-18)" stage="Color" />
+  </stage>
+  <stage stageid="f8c1eb8c-bd40-465d-8be2-0e50b3dc4883" name="Calculate stop" type="Calculation">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="120" y="135" />
+    <onsuccess>15552364-dae4-4b03-aa4d-b2585920a66b</onsuccess>
+    <calculation expression="InStr([SingleData.Name], &quot;,&quot;)" stage="Stop" />
+  </stage>
+  <stage stageid="7e11c7e9-31fe-48a7-a53e-d4661c206a39" name="Stop" type="Data">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="135" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="468b0112-7453-46d9-bb01-8a7fd03dbd97" name="Color added" type="Calculation">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="210" y="90" />
+    <onsuccess>0b835161-eec4-4175-b3aa-4be49b9f6ae5</onsuccess>
+    <calculation expression="[Color]" stage="SingleData.Colour" />
+  </stage>
+  <stage stageid="e85c09d2-c220-400b-8287-50f36cbf6c63" name="OutputCollection" type="Collection">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit />
+    <display x="300" y="-90" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0b835161-eec4-4175-b3aa-4be49b9f6ae5" name="Utility - Collection Manipulation::Append Rows to Collection" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="45" />
+    <inputs>
+      <input type="collection" name="Main Collection" friendlyname="Main Collection" narrative="The collection to append to." expr="[OutputCollection]" />
+      <input type="collection" name="Collection to Append" friendlyname="Collection to Append" narrative="The collection to append." expr="[SingleData]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" friendlyname="Combined Collection" narrative="The combined collection." stage="OutputCollection" />
+    </outputs>
+    <onsuccess>ca7fdc42-78d3-4fa9-b7bf-aad18b88c91f</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="ed29da89-d47c-4aa9-92e2-c9f32455717d" name="Color" type="Data">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <display x="300" y="90" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ca7fdc42-78d3-4fa9-b7bf-aad18b88c91f" name="Work Queues::Mark Completed" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Marks the item as completed, by updating the Completed timestamp and setting Locked to null. The item must be 'owned' by the calling process - i.e. it must have been retrieved using Get Next Item.</narrative>
+    <display x="120" y="45" />
+    <inputs>
+      <input type="text" name="Item ID" friendlyname="Item ID" narrative="The ID of the item to mark" expr="[Item ID]" />
+    </inputs>
+    <onsuccess>3eafe02c-e06c-46fd-996c-dcb1c5aa57e5</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Mark Completed" />
+  </stage>
+  <stage stageid="11a01be2-631e-4236-a4ed-798e1505b6f8" name="MS Excel VBO::Write Collection" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="135" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the specified collection should be written. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook within which the data should be written. The default empty value indicates the current workbook within the specified instance." expr="[Workbook Name]" />
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection containing the data which should be written to the worksheet." expr="[OutputCollection]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet on which the given data should be written. The default empty value indicates the current sheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+      <input type="text" name="Cell Reference" friendlyname="Cell Reference" narrative="The reference at which the collection should be written." expr="&quot;A1&quot;" />
+      <input type="flag" name="Include Column Names" friendlyname="Include Column Names" narrative="True to indicate that the column names from the collection should be written out as the first row; False to ignore the column names and just write out the data." expr="True" />
+    </inputs>
+    <onsuccess>d01e6f58-5167-4173-9d49-0ca79e7d8586</onsuccess>
+    <resource object="MS Excel VBO" action="Write Collection" />
+  </stage>
+  <stage stageid="d01e6f58-5167-4173-9d49-0ca79e7d8586" name="MS Excel VBO::Close Workbook" type="Action">
+    <subsheetid>af2e101c-7339-478a-9f27-b286ca70eb17</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-135" y="135" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the workbook which should be closed resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which should be closed." expr="[Workbook Name]" />
+      <input type="flag" name="Save Data" friendlyname="Save Data" narrative="True to save the data before closing the workbook; The default of False will discard any changes before closing the workbook." expr="True" />
+    </inputs>
+    <onsuccess>ae269436-0640-465a-b42b-17caf67fb68a</onsuccess>
+    <resource object="MS Excel VBO" action="Close Workbook" />
   </stage>
 </process>
